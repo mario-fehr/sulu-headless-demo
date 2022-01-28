@@ -17,39 +17,19 @@
     {% block style %}{% endblock %}
 </head>
 <body>
-    <header>
-        {% block header %}
-            <nav>
-                <ul>
-                    <li>
-                        <a href="{{ sulu_content_root_path() }}">Homepage</a>
-                    </li>
-
-                    {% for item in sulu_navigation_root_tree('main') %}
-                        <li>
-                            <a href="{{ sulu_content_path(item.url, item.webspaceKey) }}"
-                               title="{{ item.title }}">{{ item.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        {% endblock %}
-    </header>
-
-    <form action="{{ path('sulu_search.website_search') }}" method="GET">
-        <input name="q" type="text" placeholder="Search"/>
-        <input type="submit" value="Go"/>
-    </form>
-
     <main>
-        {% block content %}{% endblock %}
-    </main>
+        {% block content %}
+            {# define container element for rendering single page application #}
+            <div id="sulu-headless-container"></div>
 
-    <footer>
-        {% block footer %}
-            <p>Copyright {{ 'now'|date('Y') }} SULU</p>
+            {# initialize application with json data of current page to prevent second request on first load #}
+            <script>window.SULU_HEADLESS_VIEW_DATA = {{ headless|json_encode|raw }};</script>
+            <script>window.SULU_HEADLESS_API_ENDPOINT = '{{ sulu_content_path('/api') }}';</script>
+
+            {# start single page application by including built javascript code #}
+            <script src="/build/headless/js/index.js"></script>
         {% endblock %}
-    </footer>
+    </main>
 
     {% block javascripts %}{% endblock %}
 </body>
