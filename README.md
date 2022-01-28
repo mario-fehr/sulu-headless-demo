@@ -1,6 +1,13 @@
 # Sulu Headless Demo
 
-This Demo exists to visualize a bug in sulu headless bundle.
+This is a **Sulu Demo Headless**. It was created to show a simple implementation of an application made
+with Sulu and headless bundle.
+
+## Used Extensions
+
+### [SuluHeadlessBundle](https://github.com/sulu/SuluHeadlessBundle)
+
+The SuluHeadlessBundle provides controllers and services for using the Sulu content management system in a headless way.
 
 ## Requirements
 
@@ -9,7 +16,7 @@ This Demo exists to visualize a bug in sulu headless bundle.
     - xml extension
     - simplexml extension
     - gd or imagick extension (needed for image converts)
-* MySQL or MySQL Server
+* MySQL or PostgreSQL Server
 * Composer 2
 * PNPM if you want to run npm tasks
 
