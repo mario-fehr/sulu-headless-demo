@@ -50,6 +50,12 @@ Now you can try out our demo, there is no need to configure a virtual host. Just
 php -S 127.0.0.1:8000 -t public config/router.php
 ```
 
+or if you have symfony cli installed run:
+
+```bash
+symfony serve
+```
+
 Then you can access the administration interface via [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin). The default user and password is “admin”.
 
 The web frontend can be found under [http://127.0.0.1:8000](http://127.0.0.1:8000).
