@@ -5,7 +5,7 @@
 
     <key>homepage</key>
 
-    <view>pages/homepage</view>
+    <view>pages/headless</view>
     <controller>Sulu\Bundle\HeadlessBundle\Controller\HeadlessWebsiteController::indexAction</controller>
     <cacheLifetime>86400</cacheLifetime>
 
